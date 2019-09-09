@@ -2,6 +2,7 @@ package com.krishna.mvvm.ui.auth
 
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.krishna.mvvm.data.repositary.UserRepositary
 
 class AuthViewModel: ViewModel(){
 
@@ -19,6 +20,7 @@ class AuthViewModel: ViewModel(){
             return
         }
         //Success
-        authListener?.onSuccess()
+        val loginResponse = UserRepositary().userLogin(email!!,password!!)
+        authListener?.onSuccess(loginResponse)
     }
 }
