@@ -3,6 +3,7 @@ package com.krishna.mvvm.ui.auth
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.krishna.mvvm.data.repositary.UserRepositary
+import com.krishna.mvvm.util.ApiException
 import com.krishna.mvvm.util.Coroutines
 
 class AuthViewModel: ViewModel(){
@@ -21,12 +22,19 @@ class AuthViewModel: ViewModel(){
             return
         }
         Coroutines.main{
-            val response = UserRepositary().userLogin(email!!,password!!)
-            if (response.isSuccessful){
-                authListener?.onSuccess(response.body()?.user!!)
-            }else{
-                authListener?.onFailure("Error Code: ${response.code()}")
+
+            try {
+                val authResponse = UserRepositary().userLogin(email!!,password!!)
+
+                authResponse.user?.let {
+                    authListener?.onSuccess(it)
+                    return@main
+                }
+                authListener?.onFailure(authResponse.message!!)
+            }catch (e: ApiException){
+                authListener?.onFailure(e.message!!)
             }
+
 
         }
 
