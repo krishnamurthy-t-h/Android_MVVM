@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.krishna.mvvm.data.repositary.UserRepositary
 import com.krishna.mvvm.util.ApiException
 import com.krishna.mvvm.util.Coroutines
+import com.krishna.mvvm.util.NoInternetException
 
 class AuthViewModel(
     private val repositary: UserRepositary
@@ -37,6 +38,8 @@ class AuthViewModel(
                 }
                 authListener?.onFailure(authResponse.message!!)
             }catch (e: ApiException){
+                authListener?.onFailure(e.message!!)
+            }catch (e: NoInternetException){
                 authListener?.onFailure(e.message!!)
             }
 

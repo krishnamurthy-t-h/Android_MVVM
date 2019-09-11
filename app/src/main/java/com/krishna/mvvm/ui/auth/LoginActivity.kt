@@ -12,6 +12,7 @@ import com.krishna.mvvm.R
 import com.krishna.mvvm.data.db.AppDatabase
 import com.krishna.mvvm.data.db.entities.User
 import com.krishna.mvvm.data.network.MyApi
+import com.krishna.mvvm.data.network.NetworkConnectionInterceptor
 import com.krishna.mvvm.data.repositary.UserRepositary
 import com.krishna.mvvm.databinding.ActivityLoginBinding
 import com.krishna.mvvm.ui.home.HomeActivity
@@ -26,7 +27,8 @@ class LoginActivity : AppCompatActivity() , AuthListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val api = MyApi()
+        val networkConnectionIntercepter = NetworkConnectionInterceptor(this)
+        val api = MyApi(networkConnectionIntercepter)
         val db = AppDatabase(this)
         val repositary = UserRepositary(api,db)
 

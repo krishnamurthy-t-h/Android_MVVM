@@ -1,6 +1,7 @@
 package com.krishna.mvvm.data.network
 
 import com.krishna.mvvm.data.network.responses.AuthResponse
+import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,9 +19,18 @@ interface MyApi {
     ): Response<AuthResponse>
 
     companion object{
-        operator fun invoke(): MyApi{
+        operator fun invoke(
+            networkConnectionInterceptor: NetworkConnectionInterceptor
+        ): MyApi{
+
+
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
+
             return  Retrofit.Builder()
                 .baseUrl("https://api.simplifiedcoding.in/course-apis/mvvm/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
