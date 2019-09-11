@@ -12,7 +12,7 @@ import com.krishna.mvvm.data.db.entities.User
 interface UserDao{
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(user: User) : Long
+    suspend fun upsert(user: User) : Long
 
     @Query(value = "SELECT * FROM user WHERE uid = $CURRENT_USER_ID")
     fun getuser() : LiveData<User>
