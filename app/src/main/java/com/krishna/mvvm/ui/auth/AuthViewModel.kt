@@ -42,8 +42,6 @@ class AuthViewModel(
             }catch (e: NoInternetException){
                 authListener?.onFailure(e.message!!)
             }
-
-
         }
 
     }
