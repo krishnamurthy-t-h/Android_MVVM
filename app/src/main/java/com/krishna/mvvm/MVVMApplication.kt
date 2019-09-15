@@ -25,7 +25,5 @@ class MVVMApplication :Application(),KodeinAware {
         bind() from singleton { UserRepositary(instance(),instance()) }
         bind() from provider { AuthViewModelFactory(instance())  }
 
-
-
     }
 }
