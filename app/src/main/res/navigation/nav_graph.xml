@@ -9,6 +9,6 @@
     <fragment
             android:id="@+id/profileFragment"
             android:name="com.krishna.mvvm.ui.home.profile.ProfileFragment"
-            android:label="profile_fragment"
+            android:label="Profile"
             tools:layout="@layout/profile_fragment" />
 </navigation>
