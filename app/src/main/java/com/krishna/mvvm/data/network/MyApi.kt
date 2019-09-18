@@ -30,9 +30,7 @@ interface MyApi {
     ): Response<AuthResponse>
 
     @GET("quotes")
-    suspend fun getQuotes(
-
-    ) : Response<QuotesResponse>
+    suspend fun getQuotes() : Response<QuotesResponse>
 
 
     companion object{

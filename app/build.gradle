@@ -69,5 +69,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.2.0-alpha02"
     implementation "androidx.navigation:navigation-ui-ktx:2.2.0-alpha02"
 
+    //Android RecyclerView library
+    implementation 'com.xwray:groupie:2.3.0'
+    implementation 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
+    implementation 'com.xwray:groupie-databinding:2.3.0'
+
 
 }
