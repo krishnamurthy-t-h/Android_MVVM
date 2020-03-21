@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android_MVVM.iml" filepath="$PROJECT_DIR$/Android_MVVM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Android_MVVM-app.iml" filepath="$PROJECT_DIR$/app/Android_MVVM-app.iml" group="Android_MVVM/app" />
+      <module fileurl="file://$PROJECT_DIR$/GIT_PROJECTS-Android_MVVM.iml" filepath="$PROJECT_DIR$/GIT_PROJECTS-Android_MVVM.iml" group="Android_MVVM" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
