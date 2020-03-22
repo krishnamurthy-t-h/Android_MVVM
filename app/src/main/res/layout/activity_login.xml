@@ -44,7 +44,7 @@
                         android:text="architect your app with"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" app:fontFamily="cursive"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="#465A61"/>
 
                 <TextView
@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                        app:fontFamily="casual" android:textStyle="bold" android:textAllCaps="false"
+                        android:textStyle="bold" android:textAllCaps="false"
                         android:typeface="monospace" android:textColor="#969EEE"/>
 
             </LinearLayout>
@@ -70,7 +70,6 @@
                 <EditText
 
                         android:text="@={viewModel.email}"
-
                         android:hint="userName@gmail.com"
                         android:inputType="textEmailAddress"
                         android:drawablePadding="16dp"
@@ -84,7 +83,6 @@
                 <EditText
 
                         android:text="@={viewModel.password}"
-
                         android:inputType="textPassword"
                         android:hint="password"
                         android:drawablePadding="16dp"
