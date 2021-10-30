@@ -22,6 +22,7 @@ class MVVMApplication :Application(),KodeinAware {
 
     override val kodein = Kodein.lazy {
         import(androidXModule(this@MVVMApplication))
+        //Test whitesouce test.
 
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { MyApi(instance()) }
